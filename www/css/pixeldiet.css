@@ -1,0 +1,12 @@
+/**
+ * Styles for the PixelDiet.mjs class.
+ */
+* { box-sizing:border-box; }
+
+body {
+  color: black;
+  width: 100vw;
+  height: 100vh;
+  overflow: visible;
+  font-family: 'Orbitron', sans-serif;
+}
