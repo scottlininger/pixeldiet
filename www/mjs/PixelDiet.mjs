@@ -20,7 +20,8 @@ export default class PixelDiet extends Site {
     this.panel.className = 'pd-panel';
     this.panel.innerHTML = 'Hello world';
     document.body.append(this.panel);
-    alert(1);
+    
+    
 
   }
 

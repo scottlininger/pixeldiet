@@ -2,6 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
     <meta name="viewport" content="width=device-height, initial-scale=1">
     <title>PixelDiet</title>
 
@@ -13,12 +15,32 @@
   </head>
   <body>
     
+    <h1>Demo - Native camera in browsers</h1>
 
+    <!-- The `label` is attached to the hidden file input -->
+    <label for="cameraFileInput">
+      <span class="btn">Open camera</span>
 
-    <!-- Font preloads. -->
-    <div style="position: absolute; opacity: 0">    
-      <span style="font-family: Goldplay;">.</span>
-      <i class="far fa-plus" aria-hidden="true"></i>
-    </div>
+      <!-- The hidden file `input` for opening the native camera -->
+      <input
+        id="cameraFileInput"
+        type="file"
+        accept="image/*"
+        capture="environment"
+      />
+    </label>
+
+    <!-- displays the picture uploaded from the native camera -->
+    <img id="pictureFromCamera" />
   </body>
 </html>
+
+<script>
+document
+  .getElementById("cameraFileInput")
+  .addEventListener("change", function () {
+    document
+      .getElementById("pictureFromCamera")
+      .setAttribute("src", window.URL.createObjectURL(this.files[0]));
+  });
+</script>
